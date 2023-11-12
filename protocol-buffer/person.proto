@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service Person {
+    rpc GetPersons ( Empty ) returns ( PersonsModel ) {}
+}
+
+message Empty {}
+
+message PersonModel {
+    string name = 1;
+    int32 id = 2;
+}
+
+message PersonsModel {
+    repeated PersonModel person = 1;
+}
